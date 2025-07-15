@@ -844,6 +844,21 @@ video {
   background-color: rgb(84 212 255 / var(--tw-bg-opacity));
 }
 
+.bg-navajoWhite4g-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(216 210 201 / var(--tw-bg-opacity));
+}
+
+.bg-navajoWhite4g-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(242 240 237 / var(--tw-bg-opacity));
+}
+
+.bg-greyg-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 243 243 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
