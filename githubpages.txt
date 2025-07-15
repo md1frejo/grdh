@@ -1,0 +1,51 @@
+# ✅ DEPLOY VUE 3 + VITE TO GITHUB PAGES
+
+# 1. Go to your Vue project root
+cd path/to/your-vite-vue-project
+
+# 2. Install gh-pages
+npm install --save-dev gh-pages
+
+# 3. Update vite.config.js
+#    Add base option (replace USERNAME and REPO)
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+export default defineConfig({
+  base: '/REPO_NAME/',  // 👈 Required!
+  plugins: [vue()],
+})
+
+# 4. Update package.json
+#    Add deploy script
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "deploy": "gh-pages -d dist"
+}
+
+# 5. Build your app
+npm run build
+
+# 6. Deploy to GitHub Pages
+npm run deploy
+
+# 7. OPTIONAL: Add custom domain
+echo "www.yourdomain.com" > dist/CNAME
+
+# (Optional) Git add + push if using CNAME manually
+git add dist/CNAME
+git commit -m "Add custom domain CNAME"
+git push
+
+# 8. On GitHub:
+#    → Go to your repo
+#    → Settings → Pages
+#    → Set source to: 'gh-pages' branch
+#    → Set custom domain (optional)
+#    → Enable HTTPS
+
+# 🎉 DONE! Your site is now live at:
+# https://USERNAME.github.io/REPO_NAME/
+# or your custom domain

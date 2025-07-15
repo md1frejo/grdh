@@ -1,0 +1,304 @@
+
+AAK
+
+ABB
+
+AddLife B
+
+Addnode Group B
+
+Addtech B
+
+AFRY
+
+Alfa Laval
+
+Alleima
+
+Arion Bank SDB
+
+Asker Healthcare
+
+Asmodee
+
+Assa Abloy B
+
+AstraZeneca
+
+Atlas Copco A
+
+Atlas Copco B
+
+Atrium Ljungberg B
+
+Autoliv SDB
+
+Avanza Bank
+
+Axfood
+
+Balder B
+
+Beijer Ref B
+
+Betsson B
+
+Better Collective
+
+Bilia A
+
+Billerud
+
+BioArctic B
+
+Biotage
+
+Boliden
+
+BONESUPPORT
+
+Bravida Holding
+
+Bure Equity
+
+Camurus
+
+Castellum
+
+Catena
+
+Corem Property Group A
+
+Corem Property Group B
+
+Corem Property Group D
+
+Corem Property Group Pref
+
+Dometic Group
+
+Electrolux A
+
+Electrolux B
+
+Electrolux Professional B
+
+Elekta B
+
+Embracer Group B
+
+engcon B
+
+Epiroc A
+
+Epiroc B
+
+EQT
+
+Ericsson A
+
+Ericsson B
+
+Essity A
+
+Essity B
+
+Evolution
+
+Fabege
+
+Fastpartner A
+
+Fastpartner D
+
+Fenix Outdoor B
+
+Fortnox
+
+Getinge B
+
+Gränges
+
+H&M B
+
+Handelsbanken A
+
+Handelsbanken B
+
+Hemnet Group
+
+Hexagon B
+
+Hexpol B
+
+HMS Networks
+
+Holmen A
+
+Holmen B
+
+Hufvudstaden A
+
+Husqvarna A
+
+Husqvarna B
+
+Industrivärden A
+
+Industrivärden C
+
+Indutrade
+
+International Petroleum Corp.
+
+Investor A
+
+Investor B
+
+JM
+
+Kinnevik A
+
+Kinnevik B
+
+Lagercrantz Group B
+
+Latour B
+
+Lifco B
+
+Lindab International
+
+Loomis
+
+Lundberg B
+
+Lundin Gold
+
+Lundin Mining Corporation
+
+Medicover B
+
+Mips
+
+Munters Group AB
+
+Mycronic
+
+NCAB Group
+
+NCC A
+
+NCC B
+
+New Wave B
+
+Nibe Industrier B
+
+Nolato B
+
+Nordea Bank
+
+Nordnet
+
+NP3 Fastigheter
+
+NP3 Fastigheter Pref
+
+Nyfosa
+
+OEM International B
+
+Pandox B
+
+Peab B
+
+Röko B
+
+SAAB B
+
+Sagax A
+
+Sagax B
+
+Sagax D
+
+Sampo A SDB
+
+Sandvik
+
+SCA A
+
+SCA B
+
+SEB A
+
+SEB C
+
+Sectra B
+
+Securitas B
+
+Sinch
+
+Skanska B
+
+SKF A
+
+SKF B
+
+SSAB A
+
+SSAB B
+
+Stora Enso A
+
+Stora Enso R
+
+Storskogen B
+
+Sweco A
+
+Sweco B
+
+Swedbank A
+
+Swedish Orphan Biovitrum
+
+Systemair
+
+Tele2 A
+
+Tele2 B
+
+Telia Company
+
+Thule Group
+
+Tietoevry
+
+TRATON SE
+
+Trelleborg B
+
+Troax Group
+
+Truecaller
+
+Vimian Group
+
+Vitec Software Group B
+
+Vitrolife
+
+Volvo A
+
+Volvo B
+
+Volvo Car B
+
+Wallenstam B
+
+Wihlborgs Fastigheter
+
+Yubico

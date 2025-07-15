@@ -1,0 +1,13 @@
+-*- mode: compilation; default-directory: "~/Dropbox/prog/web/vuejs/grdh/src/" -*-
+Compilation started at Tue Jul  1 18:55:33
+
+rg --line-number --no-heading --ignore-case \#app .
+./assets/main.css:6:#app {
+./assets/main.css:17:#app {
+./assets/main.css:41:  #app {
+./assets/tailwind.css:1204:#app {
+./assets/tailwind.css:1215:#app {
+./assets/tailwind.css:1239:  #app {
+./main.js:6:createApp(App).mount('#app')
+
+Compilation finished at Tue Jul  1 18:55:33, duration 0.02 s
