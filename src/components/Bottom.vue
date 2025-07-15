@@ -4,7 +4,7 @@
 
 
 <template>
-  <p class="text-center text-lg text-red-500">copyright jonas, date should be here</p>
+  <p class="text-center text-lg text-red-500">copyright jonas, webdeveloper</p>
 </template>
 
 
