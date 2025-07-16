@@ -54,11 +54,11 @@
       </div>
     </li>
     <br>
-    <h1 class="font-radley text-stat1 text-center text-browngrad-300">We have a total of {{ Object.entries(rank).length }} stocks and a total of {{ rank.reduce((sum, [, value]) => sum + value, 0) }} headlines as of {{ sdate }} </h1>
+    <h1 class="font-radley text-stat1 text-center text-headlinecard-500">We have a total of {{ Object.entries(rank).length }} stocks and a total of {{ rank.reduce((sum, [, value]) => sum + value, 0) }} headlines as of {{ sdate }} </h1>
   </ul>
   <br>
-  <p class="bg-greyg-900 font-radley text-headlinecard-700 text-left text-st2"> so the conclusion is: </p>
-  <p class="bg-greyg-900 font-radley text-headlinecard-700 text-left text-st2"
+  <p class="font-radley text-browngrad-300 text-center text-st2"> so the conclusion is: </p>
+  <p class="bg-greyg-900 font-radley text-headlinecard-500 text-left text-st1"
      v-for="k in tops" :key="k">{{ k.split(':')[0].trim() }}</p>
 
 </template>
