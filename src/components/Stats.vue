@@ -2,7 +2,8 @@
 
  import sda from '../../news.json';
  import { ref } from 'vue';
-
+ import Chart from './Chart.vue'
+ 
  const statd = ref([...sda]) 
 
  const sdate = statd.value.shift()?.reccorded || 'No date'
@@ -57,9 +58,11 @@
     <h1 class="font-radley text-stat1 text-center text-headlinecard-500">We have a total of {{ Object.entries(rank).length }} stocks and a total of {{ rank.reduce((sum, [, value]) => sum + value, 0) }} headlines as of {{ sdate }} </h1>
   </ul>
   <br>
-  <p class="font-radley text-browngrad-300 text-center text-st2"> so the conclusion is: </p>
+  <p class="font-radley text-browngrad-300 text-center text-st2"> so these are the candidates: </p>
   <p class="bg-greyg-900 font-radley text-headlinecard-500 text-left text-st1"
      v-for="k in tops" :key="k">{{ k.split(':')[0].trim() }}</p>
+  <p class="font-radley text-browngrad-300 text-center text-st2">based on todays headlines</p>
+  <Chart />
 
 </template>
 

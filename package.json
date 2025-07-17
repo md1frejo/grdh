@@ -10,7 +10,7 @@
     "tailwind:build": "tailwindcss -i ./src/assets/main.css -o ./src/assets/tailwind.css --watch"
   },
   "dependencies": {
-    "chart.js": "^4.4.9",
+    "chart.js": "^4.5.0",
     "vue": "^3.5.13",
     "vue-chartjs": "^5.3.2"
   },
