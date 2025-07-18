@@ -144,6 +144,27 @@ def genjson(omx30,url='https://www.affarsvarlden.se/aktie'):
 
     return news
 
+def getshistory(ticker,af='2024-01-01'):
+
+        # provide ticker name, ex: SKF-A.ST and get ticker hist
+
+    hdata=[]
+    mname=ticker.upper()+"-B.ST"
+    bf=datetime.now().strftime("%Y-%m-%d")
+    
+    res=yf.download(mname,af,bf)
+
+    if res.empty:
+        return 'zero'
+    else:
+        closing_prices=res[("Close", "SAAB-B.ST")].tolist()
+        data = {"saab": closing_prices}
+
+        with open("public/ticks.json", "w") as f:
+            js.dump(data, f)
+
+    return res
+
 def main():
 
     # get all stocknames

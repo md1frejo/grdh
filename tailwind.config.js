@@ -50,6 +50,17 @@ export default {
 		800: "#c6ffc6",
 		900: "#e2ffe2",
 	      },
+	      antiquewhiteg: {
+		100: "#faebd7",
+		200: "#faeddb",
+		300: "#fbefdf",
+		400: "#fbf1e4",
+		500: "#fcf3e8",
+		600: "#fcf6ed",
+		700: "#fdf8f1",
+		800: "#fdfaf6",
+		900: "#fefcfa",
+	      },
 	      greyg: {
 		100: "#999999",
 		200: "#a4a4a4",
