@@ -144,31 +144,60 @@ def genjson(omx30,url='https://www.affarsvarlden.se/aktie'):
 
     return news
 
-def getshistory(ticker,af='2024-01-01'):
+def gethistory(cand,af='2024-01-01'):
 
         # provide ticker name, ex: SKF-A.ST and get ticker hist
 
     hdata=[]
-    mname=ticker.upper()+"-B.ST"
     bf=datetime.now().strftime("%Y-%m-%d")
+
+    with open('./public/conv.json','r') as file:
+        conv=js.load(file)
+
+    convk=conv.keys()
     
-    res=yf.download(mname,af,bf)
+    for k in cand:
+        for l in convk:
+            ks=k.upper()
+            ls=l.upper().split()
+            if ks in ls:
+                mname=conv[l]
+                res=yf.download(mname,af,bf)
+                if res.empty:
+                    data={k:"nodata"}
+                else:
+                    closing_prices=res["Close",mname].tolist()
+                    data={k: closing_prices}
+                    hdata.append(data)
+                    break
 
-    if res.empty:
-        return 'zero'
-    else:
-        closing_prices=res[("Close", "SAAB-B.ST")].tolist()
-        data = {"saab": closing_prices}
+    with open("public/ticks.json","w") as f:
+        js.dump(hdata,f)
 
-        with open("public/ticks.json", "w") as f:
-            js.dump(data, f)
+    return hdata
 
-    return res
+def selectcand(news,tresh):
 
+    stats={}
+    
+    for l in news[1:]:
+        key=l['stock']
+        if key in stats.keys():
+            stats[key]+=1
+        else:
+            stats[key]=1
+
+    cand=[l[0] for l in stats.items() if l[1]>tresh]
+
+    return cand
+            
 def main():
 
     # get all stocknames
     omx30,avstocks=getstocks()
     news=genjson(omx30)
-
-    return news
+    # selct candidates with a threshold of 10
+    cand=selectcand(news,10)
+    hdata=gethistory(cand)
+    
+    return hdata
