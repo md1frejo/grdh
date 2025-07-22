@@ -148,6 +148,7 @@ def gethistory(cand,af='2024-01-01'):
 
         # provide ticker name, ex: SKF-A.ST and get ticker hist
 
+    tdate={'td':af}
     hdata=[]
     bf=datetime.now().strftime("%Y-%m-%d")
 
@@ -159,20 +160,25 @@ def gethistory(cand,af='2024-01-01'):
     for k in cand:
         for l in convk:
             ks=k.upper()
-            ls=l.upper().split()
+            ls=re.split(r'\.| ',l.upper())
+        #    if k=='Boliden' and l=='Boliden.ST':
+        #        B() 
             if ks in ls:
                 mname=conv[l]
                 res=yf.download(mname,af,bf)
                 if res.empty:
-                    data={k:"nodata"}
+                    hdata.append({k:"nodata"})
+                    break
                 else:
                     closing_prices=res["Close",mname].tolist()
-                    data={k: closing_prices}
-                    hdata.append(data)
+                    hdata.append({k: closing_prices})
                     break
-
+                
     with open("public/ticks.json","w") as f:
         js.dump(hdata,f)
+
+    with open("public/tdate.json","w") as f:
+        js.dump(tdate,f)
 
     return hdata
 

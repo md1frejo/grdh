@@ -46,7 +46,7 @@
     <p class="text-center text-4xl text-browngrad-300 font-crimson">ranking of headlines</p>
     <br>
     <li v-for="k in rank" :key="k">
-      <div class="bg-deepskyblue-900 flex justify-between items-center font-dosis text-left text-st1 text-headlinecard-500">
+      <div class="bg-lightblueg-1300 flex justify-between items-center font-dosis text-left text-st1 text-headlinecard-500">
 	<span class="mr-2"> {{ k[0] }} -> {{ k[1] }} </span>
 	<span class="text-xl"> {{ k[1]>10 ? "contender" : "not enough" }} </span>
       </div>
@@ -55,7 +55,7 @@
     <h1 class="font-radley text-stat1 text-center text-headlinecard-500">We have a total of {{ Object.entries(rank).length }} stocks and a total of {{ rank.reduce((sum, [, value]) => sum + value, 0) }} headlines as of {{ sdate }} </h1>
   </ul>
   <br>
-  <p class="font-radley text-browngrad-300 text-center text-st2">selected:</p>
+  <p class="font-radley text-browngrad-300 text-center text-st2">the candidates:</p>
   <p class="bg-antiquewhiteg-900 font-radley text-headlinecard-500 text-left text-st1"
      v-for="k in tops" :key="k">{{ k.split(':')[0].trim() }} </p>
   <Chart />
