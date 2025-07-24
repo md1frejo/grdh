@@ -1,7 +1,9 @@
 <script setup>
  import { ref, onMounted, defineComponent, h } from 'vue'
  import { Line } from 'vue-chartjs'
- import tdate from '../../public/tdate.json';
+  import tdate from '../../public/tdate.json'
+ import dayjs from 'dayjs'
+ import zoomPlugin from 'chartjs-plugin-zoom'
  import {
    Chart as ChartJS,
    Title,
@@ -13,8 +15,18 @@
    CategoryScale
  } from 'chart.js'
 
- ChartJS.register(Title, Tooltip, Legend, LineElement, LinearScale, PointElement, CategoryScale)
+ ChartJS.register(
+   Title,
+   Tooltip,
+   Legend,
+   LineElement,
+   LinearScale,
+   PointElement,
+   CategoryScale,
+   zoomPlugin
+ )
 
+ const chartRef = ref(null)  // GLOBAL!
  const ticks = ref([])
  const selectedChart = ref(
    { data:null, name:''}
@@ -34,19 +46,34 @@
 
  const getStockName = (entry) => Object.keys(entry)[0]
  const isNoData = (entry) => entry[getStockName(entry)] === 'nodata'
- 
- const formatChartData = (entry) => {
-   const stockName = getStockName(entry)
-   const prices = entry[stockName]
-   return {
-     labels: prices.map((_, i) => i),
-     datasets: [{
-       data: prices,
-       borderColor: 'darkblue',
-       tension: 0.4,
-       fill: false
-     }]
-   }
+
+const formatChartData = (entry) => {
+  const stockName = getStockName(entry)
+  const startDate = dayjs(tdate.td)
+  const prices = entry[stockName]
+
+  const filteredDates = []
+  const filteredPrices = []
+
+  prices.forEach((price, i) => {
+    const date = startDate.add(i, 'day')
+    const dayOfWeek = date.day() // 0 = Sunday, 6 = Saturday
+
+    if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+      filteredDates.push(date.format('YYYY-MM-DD'))
+      filteredPrices.push(price)
+    }
+  })
+
+  return {
+    labels: filteredDates,
+    datasets: [{
+      data: filteredPrices,
+      borderColor: 'darkblue',
+      tension: 0.4,
+      fill: false
+    }]
+  }
  }
 
  const openChart = (entry) => {
@@ -62,21 +89,56 @@
    selectedChart.value = { data:null,name:  ''}
  }
 
+const resetZoom = () => {
+   const chart = chartRef.value?.chartInstance?.chart
+   chart?.resetZoom?.()
+ }
+
  const LineChart = defineComponent({
-   props: ['chartData'],
-   setup(props) {
+   props: ['chartData', 'showAxes'],
+   setup(props, { expose }) {
+     const chartInstance = ref(null)
+
+     expose({
+       chartInstance
+     })
+
      return () =>
        h(Line, {
+         ref: chartInstance,
          data: props.chartData,
          options: {
            responsive: true,
            elements: { point: { radius: 0 } },
-           plugins: { legend: { display: false }, tooltip: { enabled: false } },
-           scales: { x: { display: false }, y: { display: false } }
+           plugins: {
+             legend: { display: false },
+             tooltip: { enabled: false },
+             zoom: props.showAxes
+		 ? {
+                   zoom: {
+                     wheel: { enabled: true },
+                     pinch: { enabled: true },
+                     mode: 'x'
+                   },
+                   pan: {
+                     enabled: true,
+                     mode: 'x'
+                   },
+                   limits: {
+                     x: { min: 0 }
+                   }
+                 }
+		 : false
+           },
+           scales: {
+             x: { display: props.showAxes ?? false },
+             y: { display: props.showAxes ?? false }
+           }
          }
        })
    }
  })
+
 </script>
 
 <template>
@@ -88,14 +150,14 @@
       <div
         v-for="(entry, index) in ticks"
         :key="index"
-        class="p-4 border rounded shadow cursor-pointer"
+	       class="p-4 border-6 border-brown-700 rounded shadow cursor-pointer hover:shadow-lg transition-shadow duration-200"
         @click="!isNoData(entry) && openChart(entry)"
       >
         <div class="text-browngrad-100 bg-antiquewhiteg-900 font-radley text-headlinecard-500 text-left text-st3">
           {{ getStockName(entry) }}
         </div>
         <div v-if="isNoData(entry)" class="text-gray-500">No data</div>
-        <LineChart v-else :chart-data="formatChartData(entry)" />
+	<LineChart v-else :chart-data="formatChartData(entry)" :show-axes="false" />
       </div>
     </div>
 
@@ -104,15 +166,27 @@
       v-if="showModal"
       class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
       @click.self="closeModal">
-      <div class="bg-white p-4 rounded shadow-lg w-[90%] max-w-3xl">
-	<div class="flex justify-between items-center mb-2">
-	  <h2 class="text-lg font-semibold text-gray-800">
+      <div class="bg-white p-4 rounded shadow-lg w-[90%] max-w-3xl border-4 border-[#383838]">
+  	<div class="flex justify-between items-center mb-2">
+	  <h2 class="text-lg font-semibold text-browngrad-100">
             {{ selectedChart.name }}
 	  </h2>
+	  <button
+	    class="text-sm text-blue-600 hover:underline"
+	    @click="resetZoom">
+	    Reset Zoom
+	  </button>
           <button class="float-right text-gray-700" @click="closeModal">✕</button>
 	</div>
-          <div class="mt-4" style="height: 300px;">
-            <LineChart v-if="selectedChart.data" :chart-data="selectedChart.data" />
+        <div class="mt-4" style="height: 300px;">
+
+	  <LineChart
+	    ref="chartRef"
+	    v-if="selectedChart.data"
+	    :chart-data="selectedChart.data"
+	    :show-axes="true"
+	  />
+
           </div>
 	</div>
       </div>
