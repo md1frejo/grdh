@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <header class="bg-white shadow-md w-full">
+  <header class="bg-deepskyblue-900 shadow-md w-full">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 	    <div class="max-w-sm rounded overflow-hidden shadow-lg">
 	      <div class="px-2 py-2">

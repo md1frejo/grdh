@@ -35,7 +35,7 @@
     reccorded: {{ sdata[0].reccorded }} </p>
   <br>
   <br>
-  <div class="grid bg-deepskyblue-900 grid-cols-1 md:grid-cols-4 gap-6">
+  <div class="grid bg-lightblueg-1300 grid-cols-1 md:grid-cols-4 gap-6">
     <StockHeading v-for="st in disp" :key="st.id" :st="st" />
   </div>
   
