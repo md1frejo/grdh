@@ -4,12 +4,12 @@
 
 <template>
     <div class="grid grid-cols-1 gap-4">
-      <div class="bg-lightblueg-800 text-center text-red p-6 rounded-md">
-	    <h1 class="text-8xl text-topheading font-dosis mb-2">GRDH</h1>
-	    <h1 class="text-tp1 text-blue-500 font-pacifico">
-		(Get Rich <span class="text-red-500">or</span> Die Happy)
-	    </h1>
-	</div>
+      <div class="bg-antiquewhiteg-600 text-center text-red p-6 rounded-md">
+	<h1 class="text-slateblueg-200 text-8xl text-topheading font-playfair mb-2">~ GR-DH ~</h1>
+	<h1 class="text-tp1 text-blue-500 font-pacifico">
+	  (Get Rich <span class="text-red-500">or</span> Die Happy)
+	</h1>
+      </div>
     </div>
  </template>
 

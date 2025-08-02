@@ -33,12 +33,12 @@
           <div class="bg-paleGreen-400">
             <h1 class="bg-deepskyblue-500 text-sh1 text-headlinecard-700">{{ st.stock }}</h1>
           </div>
-          <div class="bg-deepskyblue-800 p-1">
+          <div class="bg-blackgrad-900 p-1">
             <h2 class="text-md font-semibold text-blackgrad-500 py-4">{{ shortext(st.headline, 30) }}</h2>
           </div>
           <div class="bg-deepskyblue-700 py-0.5 px-0.5 mb-2">
             <a v-if="st.link !== 'missing'" :href="st.link" class="inline-block px-4 py-2 bg-sky-100 text-mg3 text-black text-sm font-medium rounded hover:bg-sky-400 transition">Read more</a>
-            <a v-else href="#" @click.prevent="nolink" class="inline-block px-4 py-2 bg-sky-100 text-black text-sm font-medium rounded cursor-not-allowed">Read more</a>
+            <a v-else href="#" @click.prevent="nolink" class="inline-block px-4 py-2 bg-deepskyblue-500 text-slateblueg-100 text-rdm1 font-medium rounded cursor-not-allowed">Read more</a>
           </div>
         </div>
       </div>
