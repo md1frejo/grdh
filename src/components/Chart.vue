@@ -220,7 +220,7 @@ const resetZoom = () => {
   </div>
   <p class="bg-antiquewhiteg-900 font-radley text-headlinecard-500 text-left text-st1"
      v-for="(k, j) in tops" :key="j">
-    {{ k.split(':')[0].trim() }} - {{ trendMap[k.split(':')[0].trim()] ? "positive trend" : "uncertain trend" }}</p>
+    {{ k.split(':')[0].trim() }} - {{ trendMap[k.split(':')[0].trim()] ? "positive" : "fluctuating" }}</p>
 </template>
 
 <style scoped>

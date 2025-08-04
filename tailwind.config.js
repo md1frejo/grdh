@@ -112,6 +112,18 @@ export default {
 		    800: "#c6ffff",  
 		    900: "#e2ffff",  
 		},
+		LightBlueg: {
+		    100: "#add8e6",
+		    200: "#b5dbe8",
+		    300: "#bddfeb",
+		    400: "#c5e3ed",
+		    500: "#cde7f0",
+		    600: "#d6ebf2",
+		    700: "#deeff5",
+		    800: "#e6f3f7",
+		    900: "#eef7fa",
+		    1000: "#f6fbfc",
+		},
 		deepskyblue: {
 		    100: "#00bfff",
 		    200: "#1cc6ff",
