@@ -28,7 +28,7 @@
 	<br>
 	<div class="font-mono text-base text-gray-800">
 	  <ul class="list-disc pl-6">
-	    <p class="font-mono text-3xl text-center text-headingtext mb-6">collected stock headlines from news</p>
+	    <p class="font-mono text-3xl text-center text-headingtext mb-6">collected stock headlines from news are ranked</p>
 	    <p class="font-sans-serif text-center text-3xl text-headingtext mb-6"> buy the corresponding stock and you may get rich</p>
 	      <p class="font-mono text-3xl text-center text-red-500 mb-6">or</p>
 	      <p class="font-fire text-center text-3xl text-headingtext mb-6">just don't care and die happy</p>

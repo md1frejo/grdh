@@ -169,7 +169,7 @@ const resetZoom = () => {
 <template>
   <div class="p-4">
     <h1 class="font-radley text-browngrad-300 text-center text-st2">
-      top contenders
+      top ranked stocks price history
     </h1>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <div
