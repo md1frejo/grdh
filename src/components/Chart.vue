@@ -169,7 +169,7 @@ const resetZoom = () => {
 <template>
   <div class="p-4">
     <h1 class="font-radley text-browngrad-300 text-center text-st2">
-      top ranked stocks price history
+      price history
     </h1>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <div
@@ -218,8 +218,11 @@ const resetZoom = () => {
       </div>
     </div>
   </div>
-  <p class="bg-antiquewhiteg-900 font-radley text-headlinecard-500 text-left text-st1"
-     v-for="(k, j) in tops" :key="j">
+  <h1 class="font-radley text-browngrad-300 text-center text-st2">
+    trend, growing or fluctuating:
+  </h1>
+    <p class="bg-antiquewhiteg-900 font-radley text-headlinecard-500 text-left text-st1"
+       v-for="(k, j) in tops" :key="j">
     {{ k.split(':')[0].trim() }} - {{ trendMap[k.split(':')[0].trim()] ? "positive" : "fluctuating" }}</p>
 </template>
 

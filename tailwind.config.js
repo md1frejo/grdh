@@ -112,6 +112,30 @@ export default {
 		    800: "#c6ffff",  
 		    900: "#e2ffff",  
 		},
+		LightBlue2g: {
+		    100: "#add8e6",
+		    200: "#b5dbe8",
+		    300: "#bddfeb",
+		    400: "#c5e3ed",
+		    500: "#cde7f0",
+		    600: "#d6ebf2",
+		    700: "#deeff5",
+		    800: "#e6f3f7",
+		    900: "#eef7fa",
+		    1000: "#f6fbfc",
+		},
+		SkyBlue4g: {
+		    100: "#4a708b",
+		    200: "#5c7e96",
+		    300: "#6e8ca2",
+		    400: "#809aad",
+		    500: "#92a9b9",
+		    600: "#a4b7c4",
+		    700: "#b6c5d0",
+		    800: "#c8d4dc",
+		    900: "#dae2e7",
+		    1000: "#ecf0f3",
+		},
 		LightBlueg: {
 		    100: "#add8e6",
 		    200: "#b5dbe8",
@@ -195,6 +219,7 @@ export default {
 		radley: ['radley', 'cursive'] // style: regular 400 italic,
 	  },
 	    fontSize: {
+		'bo1': ['12pt', { lineHeight: '1.0', fontWeight: '100', letterSpacing: '0.2em' }],
 		'rdm1': ['12pt', { lineHeight: '1.0', fontWeight: '100', letterSpacing: '0.2em' }],
 		'howtw': ['60pt', { lineHeight: '1.5', fontWeight: '100', letterSpacing: '0.2em' }],
 	    
